@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
+.header {
+    background-color: blueviolet;
+    padding: 30px;
+}
+.main {
+    background-color: aqua;
+    padding: 20px;
+    width: 700px;
+    float: left;
+}
+.sidebar {
+    background-color: brown;
+    padding: 40px;
+    height: 300px;
+    width: 300px;
+    float: left;
+}
+.footer {
+    background-color: tomato;
+    padding: 30px;
+    clear: both;
+}
