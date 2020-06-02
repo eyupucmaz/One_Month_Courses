@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table-Top.JS</title>
+    <style>
+      body {
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header"></h1>
+    <p class="bodytext"></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <script type="text/javascript">
+      var publicSpreadsheetUrl =
+        "https://docs.google.com/spreadsheets/d/1koD3ORfgj66iojae7PxT7rE6E921jwanK_pkvS6VZUM/edit?usp=sharing";
+
+      function init() {
+        Tabletop.init({
+          key: publicSpreadsheetUrl,
+          callback: showInfo,
+          simpleSheet: true,
+        });
+      }
+
+      function showInfo(data, tabletop) {
+        //alert("Successfully processed!");
+        //console.log(data);
+
+        var header = document.querySelector(".header");
+        var bodytext = document.querySelector(".bodytext");
+        data.forEach(function (data) {
+          //console.log(data.Name);
+          //console.log(data.Category);
+          header.innerHTML = data.siteName;
+          bodytext.innerHTML = data.siteDesc;
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>

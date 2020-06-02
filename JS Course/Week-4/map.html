@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAP() Function</title>
+
+    <style>
+      body {
+        background: #87cefa;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Foreach - Loops through data, executes once per array elements
+      //Cities example
+      var cities = ["nyc", "paris", "berlin"];
+      cities.forEach(function (city) {
+        console.log(city);
+      });
+      console.clear();
+      //people example
+      var people = [
+        { name: "Eyup", location: "mersin" },
+        { name: "Chris", location: "nyc" },
+      ];
+
+      people.forEach(function (person) {
+        console.log(person.name);
+      });
+
+      // Map() Function - loops through data, creates a new array
+      console.clear();
+      var numbers = [1, 4, 9];
+      var doubles = numbers.map(function (num) {
+        return num * 2;
+      });
+      console.log(doubles);
+
+      // People Exmp
+
+      var people = [
+        { name: "Eyup", location: "mersin" },
+        { name: "Chris", location: "nyc" },
+      ];
+
+      var locations = people.map(function (person) {
+        return person.location;
+      });
+
+      console.log(locations);
+    </script>
+  </body>
+</html>
