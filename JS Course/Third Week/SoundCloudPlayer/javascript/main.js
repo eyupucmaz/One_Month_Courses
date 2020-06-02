@@ -1,4 +1,33 @@
 /* 1. Search */
+var UI = {};
+
+UI.pressEnter = function () {
+  document.querySelector(".js-search").addEventListener("keyup", function (e) {
+    if (e.which === 13) {
+      var input = e.target.value;
+      //console.log(input);
+      soundCloudAPI.getTrack(input);
+      document.querySelector(".js-search").value = "";
+    }
+  });
+};
+
+UI.click = function () {
+  document.querySelector(".js-submit").addEventListener("click", function (e) {
+    var input = document.querySelector(".js-search").value;
+    //console.log(input);
+    soundCloudAPI.getTrack(input);
+    document.querySelector(".js-search").value = "";
+  });
+};
+
+UI.reset = function () {
+  document.querySelector(".js-reset").addEventListener("click", function () {
+    localStorage.clear();
+    console.log("reset done");
+    location.reload();
+  });
+};
 
 /* 2. Query Soundcloud API */
 
@@ -79,12 +108,17 @@ soundCloudAPI.getEmbed = function (trackURL) {
     var sideBar = document.querySelector(".js-playlist");
 
     var box = document.createElement("div");
-    sideBar.innerHTML = embed.html;
+    box.innerHTML = embed.html;
     sideBar.insertBefore(box, sideBar.firstChild);
     localStorage.setItem("key", sideBar.innerHTML);
-    alert(sideBar.innerHTML);
+    //alert(sideBar.innerHTML);
   });
 };
+var sideBar = document.querySelector(".col-left");
+sideBar.innerHTML = localStorage.getItem("key");
 
 soundCloudAPI.init();
-soundCloudAPI.getTrack("");
+
+UI.reset();
+UI.pressEnter();
+UI.click();
