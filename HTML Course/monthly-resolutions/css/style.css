@@ -60,16 +60,19 @@ body {
      padding: 20px;
 }
 .main img {
+     padding: 0px;
      width: 100%;
 }
 .main h2 {
+     padding: 0%;
+     margin: 0em;
      font-size: 35px;
 }
 .author {
      color: gray;
 }
 .content {
-     padding-bottom: 20px;
+     padding-bottom: 25px;
 }
 
 /*----------------------------------------------------------------------------- 
