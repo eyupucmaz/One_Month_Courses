@@ -37,7 +37,7 @@ strong {
 */
 
 .button {
-     background: rgb(255, 89, 95);
+     background: rgb(255, 64, 70);
      color: white;
      text-decoration: none;
      display: block;
@@ -60,11 +60,13 @@ header {
 
 header .logo {
      border-right: 1px solid #dce0e0;
+     cursor: pointer;
 }
 
 .hero img {
      width: 100%;
 }
+
 .center {
      display: flex;
      flex-direction: column;
@@ -81,10 +83,17 @@ header .logo {
 /*
   * WHITE INFO SECTION
 */
+.container {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     background: #fff;
+}
 
 .info {
+     margin: 0;
      background: white;
-     padding-bottom: 30px;
+     padding: 0 0 30px 0;
 }
 .profile {
      padding: 20px 0;
@@ -97,7 +106,7 @@ header .logo {
      margin: 15px auto 10px auto;
      font-size: 30px;
 }
-.pet-details address {
+.address {
      font-size: 20px;
 }
 .icons {
@@ -121,4 +130,17 @@ header .logo {
      font-size: 30px;
      font-weight: 600;
      margin-bottom: 10px;
+}
+.top-info {
+     width: 100%;
+}
+@media only screen and (min-width: 1060px) {
+     .container {
+          width: 1024px;
+          margin: 0 auto;
+     }
+     .profile {
+          display: flex;
+          flex-direction: row;
+     }
 }
